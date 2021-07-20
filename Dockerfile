@@ -4,7 +4,7 @@ FROM golang:1.16-alpine as build
 ARG VERSION=v4.7.1
 
 RUN apk add --update --no-cache git
-RUN git clone --branch ${VERSION} https://github.com/maxmind/geoipupdate.git /build
+RUN git clone --branch ${VERSION} --depth 1 https://github.com/maxmind/geoipupdate.git /build
 
 WORKDIR /build/cmd/geoipupdate
 RUN GOOS=linux go build \
