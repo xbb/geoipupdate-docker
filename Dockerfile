@@ -29,8 +29,11 @@ RUN adduser \
 COPY --from=build /geoipupdate /usr/bin/geoipupdate
 COPY --from=build /build/conf/GeoIP.conf.default /etc/GeoIP.conf
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 USER geoip:geoip
 
-ENTRYPOINT ["/usr/bin/geoipupdate"]
+ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["-v", "-f", "/etc/GeoIP.conf", "-d", "/usr/share/GeoIP"]
