@@ -10,7 +10,7 @@ WORKDIR /build/cmd/geoipupdate
 RUN GOOS=linux go build -ldflags="-w -s" -o /geoipupdate
 
 # Release
-FROM alpine:latest
+FROM alpine:3.14
 
 ENV USER=geoip
 ENV UID=10001
