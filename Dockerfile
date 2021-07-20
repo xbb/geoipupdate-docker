@@ -30,4 +30,4 @@ USER geoip:geoip
 
 ENTRYPOINT ["/usr/bin/geoipupdate"]
 
-CMD ["-v", "-f", "/etc/GeoIP2.conf", "-d", "/usr/share/GeoIP"]
+CMD ["-v", "-f", "/etc/GeoIP.conf", "-d", "/usr/share/GeoIP"]

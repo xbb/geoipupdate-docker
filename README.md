@@ -9,12 +9,12 @@ It runs with user/group id 10001
 ### Example
 
 ```sh
-$ docker run --rm -v /etc/geoip.conf:/etc/GeoIP2.conf -v geoip-data:/usr/share/GeoIP xbblabs/geoipupdate
+$ docker run --rm -v /etc/geoip.conf:/etc/GeoIP.conf -v geoip-data:/usr/share/GeoIP xbblabs/geoipupdate
 ```
 
 ### Crontab example
 
 ```
 # At 12:00 on Wednesday
-00 12 * * 3 docker run --rm -v /etc/geoip.conf:/etc/GeoIP2.conf -v geoip-data:/usr/share/GeoIP xbblabs/geoipupdate
+00 12 * * 3 docker run --rm -v /etc/geoip.conf:/etc/GeoIP.conf -v geoip-data:/usr/share/GeoIP xbblabs/geoipupdate
 ```
