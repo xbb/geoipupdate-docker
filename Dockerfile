@@ -27,6 +27,7 @@ RUN adduser \
     "${USER}"
 
 COPY --from=build /geoipupdate /usr/bin/geoipupdate
+COPY --from=build /build/conf/GeoIP.conf.default /etc/GeoIP.conf
 
 USER geoip:geoip
 
