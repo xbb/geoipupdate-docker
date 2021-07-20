@@ -7,7 +7,9 @@ RUN apk add --update --no-cache git
 RUN git clone --branch ${VERSION} https://github.com/maxmind/geoipupdate.git /build
 
 WORKDIR /build/cmd/geoipupdate
-RUN GOOS=linux go build -ldflags="-w -s" -o /geoipupdate
+RUN GOOS=linux go build \
+    -ldflags="-s -w -X main.version=${VERSION} -X main.defaultConfigFile=/etc/GeoIP.conf -X main.defaultDatabaseDirectory=/usr/share/GeoIP" \
+    -o /geoipupdate
 
 # Release
 FROM alpine:3.14
