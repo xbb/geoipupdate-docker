@@ -12,7 +12,7 @@ RUN GOOS=linux go build -ldflags="-w -s" -o /geoipupdate
 # Release
 FROM alpine:latest
 
-ENV USER=johndoe
+ENV USER=geoip
 ENV UID=10001
 # See https://stackoverflow.com/a/55757473/12429735
 RUN adduser \
@@ -26,7 +26,7 @@ RUN adduser \
 
 COPY --from=build /geoipupdate /usr/bin/geoipupdate
 
-USER johndoe:johndoe
+USER geoip:geoip
 
 ENTRYPOINT ["/usr/bin/geoipupdate"]
 
