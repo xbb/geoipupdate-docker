@@ -1,7 +1,7 @@
 # Build
 FROM public.ecr.aws/docker/library/golang:1.16-alpine as build
 
-ARG VERSION=v4.8.0
+ARG VERSION=v4.9.0
 
 RUN apk add --update --no-cache git
 RUN git clone --branch ${VERSION} --depth 1 https://github.com/maxmind/geoipupdate.git /build
