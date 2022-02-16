@@ -1,5 +1,5 @@
 # Build
-FROM golang:1.16-alpine as build
+FROM public.ecr.aws/docker/library/golang:1.16-alpine as build
 
 ARG VERSION=v4.8.0
 
@@ -12,7 +12,7 @@ RUN GOOS=linux go build \
     -o /geoipupdate
 
 # Release
-FROM alpine:3.14
+FROM public.ecr.aws/docker/library/alpine:3.14
 
 ENV USER=geoip
 ENV UID=10001
