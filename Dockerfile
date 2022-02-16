@@ -12,7 +12,7 @@ RUN GOOS=linux go build \
     -o /geoipupdate
 
 # Release
-FROM public.ecr.aws/docker/library/alpine:3.14
+FROM public.ecr.aws/docker/library/alpine:3.15
 
 ENV USER=geoip
 ENV UID=10001
