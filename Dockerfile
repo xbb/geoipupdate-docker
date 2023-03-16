@@ -12,7 +12,7 @@ RUN GOOS=linux go build \
     -o /geoipupdate
 
 # Release
-FROM alpine:3.16
+FROM alpine:3.17
 
 ENV USER=geoip
 ENV UID=10001
