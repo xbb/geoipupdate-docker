@@ -1,5 +1,5 @@
 # Build
-FROM golang:1.18-alpine as build
+FROM golang:1.20-alpine as build
 
 ARG VERSION=v5.0.2
 
@@ -12,7 +12,7 @@ RUN GOOS=linux go build \
     -o /geoipupdate
 
 # Release
-FROM alpine:3.17
+FROM alpine:3.19
 
 ENV USER=geoip
 ENV UID=10001
