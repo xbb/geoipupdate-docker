@@ -1,7 +1,7 @@
 # Build
 FROM golang:1-alpine AS build
 
-ARG VERSION=v6.1.0
+ARG VERSION=v7.1.0
 
 RUN apk add --update --no-cache git
 RUN git clone --branch ${VERSION} --depth 1 https://github.com/maxmind/geoipupdate.git /build
